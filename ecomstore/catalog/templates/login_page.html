@@ -1,0 +1,50 @@
+<html>
+   <head>
+      <title>FirstPick</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+      <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.min.css"/>
+      <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+   </head>
+   <body style="padding-top:150px;">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+               <div class="panel panel-default">
+                 <div class="panel-heading"><strong>customer login</strong></div>
+                 <div class="panel-body">
+                  <form method="POST">
+                     {% csrf_token %}
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        {{ forms.email.errors }}
+                        {{forms.email}}
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        {{forms.password.errors}}
+                        {{forms.password}}
+                     </div>
+                     <button type="submit" class="btn btn-default">Submit</button>
+                  </form>
+                 </div>
+                 <div class="panel-footer">
+                  <strong><center>----New to FirstPick----</center><strong>
+                  <center><a href="{% url 'createuser'  %}">create account</a></center>
+                 </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+
+   </body>
+</html>
+
+
+      

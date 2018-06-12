@@ -26,6 +26,7 @@ SECRET_KEY = 'gm^zobk6-dz&m+h#=_#_+z!_6^fi7x(4avxbs!o(!$(dz0*z))'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'catalog.User'
 
 
 # Application definition
@@ -37,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalog'
+    'catalog',
+    'cart'
 ]
 
 MIDDLEWARE = [
@@ -63,6 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'utils.context_processors.processor.common'
+
             ],
         },
     },
@@ -129,3 +133,12 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'infymee@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

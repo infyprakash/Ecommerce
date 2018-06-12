@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h4>ABC Cart </h4>
+		<p>You have bought the following items:</p>
+	<table border='1'>
+		<tr>
+			<th>Product name</th>
+			<th>Quantity</th>
+			<th>Price</th>
+			<th>Total</th>
+		</tr>
+		{% for i in item %}
+		<tr>
+			<td>{{i.name}}</td>
+			<td>{{i.quantity}}</td>
+			<td>{{i.price}}</td>
+			<td>{{i.total}}</td>
+		</tr>
+		{% endfor %}
+		<tr>
+			<td></td>
+			<td></td>
+			<td>Total Amount</td>
+			<td>{{total}}</td>
+		</tr>
+	</table>
+	<p> Thank You for shopping with us </p>
+</center>
+</body>
+</html>

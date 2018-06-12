@@ -23,6 +23,7 @@
       <li><a href="#">Page 2</a></li>
       <li><a href="#">Page 3</a></li>
     </ul>
+    {% if user.is_authenticated %}<p style="color:white;">welcome {{user}}| <a href="{% url 'logingout'  %}">logout</a></p>{%else%}<a href="{% url 'logingin'  %}">login</a>{%endif%}
   </div>
 </nav>
 
@@ -32,7 +33,9 @@
     </ul>
 </nav>
 
-<div class="container">
+<div id="content">
+  {% block content %}
+  <div class="container">
   <div class="row">
 
     <div class="col-md-4">
@@ -51,7 +54,8 @@
   
   </div>
 </div>
-
-
+  {% endblock %}
+</div>
+<p>The logged in user has the id: {{user_id}}</p>
 </body>
 </html>
